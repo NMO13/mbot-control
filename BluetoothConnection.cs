@@ -39,6 +39,16 @@ namespace mBotRemoteController
             return DeviceList.Where(d => !string.IsNullOrEmpty(d.Name)).Select(d => new Tuple<string, string>(d.Name, d.Id)).ToArray();
         }
 
+        public Tuple<string, string>[] GetCharacteristics()
+        {
+            return WriteableCharacteristics.Select(d => new Tuple<string, string>(d.Uuid.ToString(), d.Uuid.ToString())).ToArray();
+        }
+
+        public void SetCharacteristic(int index)
+        {
+            WriteCharacteristic = WriteableCharacteristics[index];
+        }
+
         public async Task Connect(string deviceId)
         {
             try
@@ -75,7 +85,6 @@ namespace mBotRemoteController
                         throw new Exception("Device is unreachable");
                     }
 
-                    //await FindRightCharacteristic(WriteableCharacteristics);
                     WriteCharacteristic = WriteableCharacteristics[0];
                 }
             }

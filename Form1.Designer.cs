@@ -32,16 +32,15 @@ namespace mBotRemoteController
             this.forward = new System.Windows.Forms.Button();
             this.backward = new System.Windows.Forms.Button();
             this.control = new System.Windows.Forms.GroupBox();
+            this.stop = new System.Windows.Forms.Button();
             this.right = new System.Windows.Forms.Button();
             this.left = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.status = new System.Windows.Forms.Label();
             this.devices = new System.Windows.Forms.Label();
-            this.led = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.send = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
-            this.stop = new System.Windows.Forms.Button();
+            this.characteristics = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.control.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +80,17 @@ namespace mBotRemoteController
             this.control.TabStop = false;
             this.control.Text = "Control";
             // 
+            // stop
+            // 
+            this.stop.Location = new System.Drawing.Point(216, 114);
+            this.stop.Margin = new System.Windows.Forms.Padding(4);
+            this.stop.Name = "stop";
+            this.stop.Size = new System.Drawing.Size(100, 56);
+            this.stop.TabIndex = 4;
+            this.stop.Text = "Stop";
+            this.stop.UseVisualStyleBackColor = true;
+            this.stop.Click += new System.EventHandler(this.stop_Click);
+            // 
             // right
             // 
             this.right.Location = new System.Drawing.Point(388, 114);
@@ -115,7 +125,7 @@ namespace mBotRemoteController
             // status
             // 
             this.status.AutoSize = true;
-            this.status.Location = new System.Drawing.Point(28, 72);
+            this.status.Location = new System.Drawing.Point(28, 133);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(56, 17);
             this.status.TabIndex = 4;
@@ -130,31 +140,6 @@ namespace mBotRemoteController
             this.devices.TabIndex = 5;
             this.devices.Text = "Select mBot:";
             // 
-            // led
-            // 
-            this.led.AutoSize = true;
-            this.led.Location = new System.Drawing.Point(28, 113);
-            this.led.Name = "led";
-            this.led.Size = new System.Drawing.Size(86, 17);
-            this.led.TabIndex = 6;
-            this.led.Text = "LED Output:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(131, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 22);
-            this.textBox1.TabIndex = 7;
-            // 
-            // send
-            // 
-            this.send.Location = new System.Drawing.Point(392, 107);
-            this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(80, 29);
-            this.send.TabIndex = 8;
-            this.send.Text = "Send";
-            this.send.UseVisualStyleBackColor = true;
-            // 
             // update
             // 
             this.update.Location = new System.Drawing.Point(532, 29);
@@ -165,26 +150,33 @@ namespace mBotRemoteController
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
-            // stop
+            // characteristics
             // 
-            this.stop.Location = new System.Drawing.Point(216, 114);
-            this.stop.Margin = new System.Windows.Forms.Padding(4);
-            this.stop.Name = "stop";
-            this.stop.Size = new System.Drawing.Size(100, 56);
-            this.stop.TabIndex = 4;
-            this.stop.Text = "Stop";
-            this.stop.UseVisualStyleBackColor = true;
-            this.stop.Click += new System.EventHandler(this.stop_Click);
+            this.characteristics.AutoSize = true;
+            this.characteristics.Location = new System.Drawing.Point(28, 90);
+            this.characteristics.Name = "characteristics";
+            this.characteristics.Size = new System.Drawing.Size(141, 17);
+            this.characteristics.TabIndex = 10;
+            this.characteristics.Text = "Select Characteristic:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(175, 87);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(344, 24);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.Enter += new System.EventHandler(this.comboBox2_Enter);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 554);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.characteristics);
             this.Controls.Add(this.update);
-            this.Controls.Add(this.send);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.led);
             this.Controls.Add(this.devices);
             this.Controls.Add(this.status);
             this.Controls.Add(this.comboBox1);
@@ -208,11 +200,10 @@ namespace mBotRemoteController
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Label devices;
-        private System.Windows.Forms.Label led;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button send;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button stop;
+        private System.Windows.Forms.Label characteristics;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

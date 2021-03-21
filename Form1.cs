@@ -65,6 +65,7 @@ namespace mBotRemoteController
             {
                 await _connection.Connect(device.Item2);
                 this.status.Text = baseText + "Connected";
+                fillCharacteristicCombobox();
             }
             catch(Exception ex)
             {
@@ -117,6 +118,23 @@ namespace mBotRemoteController
 
             IBuffer buffer = CryptographicBuffer.CreateFromByteArray(b);
             _connection.Send(buffer);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _connection.SetCharacteristic(comboBox2.SelectedIndex);
+        }
+
+        private void comboBox2_Enter(object sender, EventArgs e)
+        {
+            fillCharacteristicCombobox();
+        }
+
+        private void fillCharacteristicCombobox()
+        {
+            comboBox2.Items.Clear();
+            var characteristics = _connection.GetCharacteristics();
+            comboBox2.Items.AddRange(characteristics.Select(d => d.Item1).ToArray());
         }
     }
 }
