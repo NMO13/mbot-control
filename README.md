@@ -13,6 +13,8 @@ Turn on your mBot. If everything worked correctly, your mBot should blink red an
 Make sure that your mBot is visible in Windows.
 Navigate to the bin/Release folder and execute mBotController.exe. 
 The following window should pop up:
+
+
 ![image](https://user-images.githubusercontent.com/3988444/111902109-01ee5700-8a3c-11eb-97f1-09ba642b1f32.png)
 
 Click on Update. You should get a list of available bluetooth devices in the dropdown, including your mBot. Select your mBot.
