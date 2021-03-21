@@ -27,7 +27,7 @@ Note that this program was written in C# and runs under Windows.
 
 References:
 - https://andreas-huppert.de/blogs/2018-03-09_mbot-bluetooth/ Andreas brought me on the right track with his bluetooth code. 
-- https://sensboston.github.io/BLEConsole/ Helped me to understand how bluetooth works in general and how it can be used in C#.
+- https://sensboston.github.io/BLEConsole/ Helped me to understand how bluetooth works in general and how it can be encoorporated in C#.
 
 
 
